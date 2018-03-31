@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ceda28b1c094cf791c4a2630a19575c" Name="Diagram1">
+        <EntityTypeShape EntityType="DBContext.Joke" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBContext.Rating" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBContext.User" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="DBContext.FK__Joke__UserID__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="DBContext.FK__Rating__JokeID__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBContext.FK__Rating__UserID__2B3F6F97" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
