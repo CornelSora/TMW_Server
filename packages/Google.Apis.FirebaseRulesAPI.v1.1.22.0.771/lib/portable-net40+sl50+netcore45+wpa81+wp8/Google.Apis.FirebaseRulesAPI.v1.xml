@@ -1,0 +1,761 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Apis.FirebaseRulesAPI.v1</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService">
+            <summary>The FirebaseRulesAPI Service.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Version">
+            <summary>The API version.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.DiscoveryVersionUsed">
+            <summary>The discovery version used to generate this service.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.#ctor">
+            <summary>Constructs a new service.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.#ctor(Google.Apis.Services.BaseClientService.Initializer)">
+            <summary>Constructs a new service.</summary>
+            <param name="initializer">The service initializer.</param>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Features">
+            <summary>Gets the service supported features.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Name">
+            <summary>Gets the service name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.BaseUri">
+            <summary>Gets the service base URI.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.BasePath">
+            <summary>Gets the service base path.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Scope">
+            <summary>Available OAuth 2.0 scopes for use with the Firebase Rules API.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Scope.CloudPlatform">
+            <summary>View and manage your data across Google Cloud Platform services</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Scope.Firebase">
+            <summary>View and administer all your Firebase data and settings</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Scope.FirebaseReadonly">
+            <summary>View all your Firebase data and settings</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIService.Projects">
+            <summary>Gets the Projects resource.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1">
+            <summary>A base abstract class for FirebaseRulesAPI requests.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new FirebaseRulesAPIBaseServiceRequest instance.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Xgafv">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.XgafvEnum">
+            <summary>V1 error format.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.XgafvEnum.Value1">
+            <summary>v1 error format</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.XgafvEnum.Value2">
+            <summary>v2 error format</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.AccessToken">
+            <summary>OAuth access token.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Alt">
+            <summary>Data format for response.</summary>
+            [default: json]
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.AltEnum">
+            <summary>Data format for response.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.AltEnum.Json">
+            <summary>Responses with Content-Type of application/json</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.AltEnum.Media">
+            <summary>Media download with context-dependent Content-Type</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.AltEnum.Proto">
+            <summary>Responses with Content-Type of application/x-protobuf</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.BearerToken">
+            <summary>OAuth bearer token.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Callback">
+            <summary>JSONP</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Fields">
+            <summary>Selector specifying which fields to include in a partial response.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Key">
+            <summary>API key. Your API key identifies your project and provides you with API access, quota, and reports.
+            Required unless you provide an OAuth 2.0 token.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.OauthToken">
+            <summary>OAuth 2.0 token for the current user.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.Pp">
+            <summary>Pretty-print response.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.PrettyPrint">
+            <summary>Returns response with indentations and line breaks.</summary>
+            [default: true]
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.QuotaUser">
+            <summary>Available to use for quota purposes for server-side applications. Can be any arbitrary string
+            assigned to a user, but should not exceed 40 characters.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.UploadType">
+            <summary>Legacy upload protocol for media (e.g. "media", "multipart").</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.UploadProtocol">
+            <summary>Upload protocol for media (e.g. "raw", "multipart").</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.FirebaseRulesAPIBaseServiceRequest`1.InitParameters">
+            <summary>Initializes FirebaseRulesAPI parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource">
+            <summary>The "projects" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.Releases">
+            <summary>Gets the Releases resource.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource">
+            <summary>The "releases" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.Create(Google.Apis.FirebaseRulesAPI.v1.Data.Release,System.String)">
+             <summary>Create a `Release`.
+            
+             Release names should reflect the developer's deployment practices. For example, the release name may
+             include the environment name, application name, application version, or any other name meaningful to the
+             developer. Once a `Release` refers to a `Ruleset`, the rules can be enforced by Firebase Rules-enabled
+             services.
+            
+             More than one `Release` may be 'live' concurrently. Consider the following three `Release` names for
+             `projects/foo` and the `Ruleset` to which they refer.
+            
+             Release Name                    | Ruleset Name --------------------------------|-------------
+             projects/foo/releases/prod      | projects/foo/rulesets/uuid123 projects/foo/releases/prod/beta |
+             projects/foo/rulesets/uuid123 projects/foo/releases/prod/v23  | projects/foo/rulesets/uuid456
+            
+             The table reflects the `Ruleset` rollout in progress. The `prod` and `prod/beta` releases refer to the
+             same `Ruleset`. However, `prod/v23` refers to a new `Ruleset`. The `Ruleset` reference for a `Release`
+             may be updated using the UpdateRelease method, and the custom `Release` name may be referenced by
+             specifying the `X-Firebase-Rules-Release-Name` header.</summary>
+             <param name="body">The body of the request.</param>
+             <param name="name">Resource name for the project which owns this `Release`.
+            
+             Format: `projects/{project_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest">
+             <summary>Create a `Release`.
+            
+             Release names should reflect the developer's deployment practices. For example, the release name may
+             include the environment name, application name, application version, or any other name meaningful to the
+             developer. Once a `Release` refers to a `Ruleset`, the rules can be enforced by Firebase Rules-enabled
+             services.
+            
+             More than one `Release` may be 'live' concurrently. Consider the following three `Release` names for
+             `projects/foo` and the `Ruleset` to which they refer.
+            
+             Release Name                    | Ruleset Name --------------------------------|-------------
+             projects/foo/releases/prod      | projects/foo/rulesets/uuid123 projects/foo/releases/prod/beta |
+             projects/foo/rulesets/uuid123 projects/foo/releases/prod/v23  | projects/foo/rulesets/uuid456
+            
+             The table reflects the `Ruleset` rollout in progress. The `prod` and `prod/beta` releases refer to the
+             same `Ruleset`. However, `prod/v23` refers to a new `Ruleset`. The `Ruleset` reference for a `Release`
+             may be updated using the UpdateRelease method, and the custom `Release` name may be referenced by
+             specifying the `X-Firebase-Rules-Release-Name` header.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.FirebaseRulesAPI.v1.Data.Release,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.Name">
+             <summary>Resource name for the project which owns this `Release`.
+            
+             Format: `projects/{project_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.Delete(System.String)">
+             <summary>Delete a `Release` by resource name.</summary>
+             <param name="name">Resource name for the `Release` to delete.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest">
+            <summary>Delete a `Release` by resource name.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.Name">
+             <summary>Resource name for the `Release` to delete.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.Get(System.String)">
+             <summary>Get a `Release` by name.</summary>
+             <param name="name">Resource name of the `Release`.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest">
+            <summary>Get a `Release` by name.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.Name">
+             <summary>Resource name of the `Release`.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.List(System.String)">
+             <summary>List the `Release` values for a project. This list may optionally be filtered by `Release` name
+             or `Ruleset` id or both.</summary>
+             <param name="name">Resource name for the project.
+            
+             Format: `projects/{project_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest">
+            <summary>List the `Release` values for a project. This list may optionally be filtered by `Release` name
+            or `Ruleset` id or both.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.Name">
+             <summary>Resource name for the project.
+            
+             Format: `projects/{project_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.PageToken">
+            <summary>Next page token for the next batch of `Release` instances.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.PageSize">
+            <summary>Page size to load. Maximum of 100. Defaults to 10. Note: `page_size` is just a hint and the
+            service may choose to load less than `page_size` due to the size of the output. To traverse all of
+            the releases, caller should iterate until the `page_token` is empty.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.Filter">
+             <summary>`Release` filter. The list method supports filters with restrictions on the `Release`
+             `name` and also on the `Ruleset` `ruleset_name`.
+            
+             Example 1) A filter of 'name=prod*' might return `Release`s with names within 'projects/foo'
+             prefixed with 'prod':
+            
+             Name                          | Ruleset Name ------------------------------|-------------
+             projects/foo/releases/prod    | projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v1 |
+             projects/foo/rulesets/uuid1234 projects/foo/releases/prod/v2 | projects/foo/rulesets/uuid8888
+            
+             Example 2) A filter of `name=prod* ruleset_name=uuid1234` would return only `Release` instances for
+             'projects/foo' with names prefixed with 'prod' referring to the same `Ruleset` name of 'uuid1234':
+            
+             Name                          | Ruleset Name ------------------------------|-------------
+             projects/foo/releases/prod    | projects/foo/rulesets/1234 projects/foo/releases/prod/v1 |
+             projects/foo/rulesets/1234
+            
+             In the examples, the filter parameters refer to the search filters for release and ruleset names are
+             relative to the project releases and rulesets collections. Fully qualified prefixed may also be
+             used. e.g. `name=projects/foo/releases/prod* ruleset_name=projects/foo/rulesets/uuid1`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.Update(Google.Apis.FirebaseRulesAPI.v1.Data.Release,System.String)">
+             <summary>Update a `Release`.
+            
+             Only updates to the `ruleset_name` field will be honored. `Release` rename is not supported. To create a
+             `Release` use the CreateRelease method instead.</summary>
+             <param name="body">The body of the request.</param>
+             <param name="name">Resource name for the `Release`.
+            
+             `Release` names may be structured `app1/prod/v2` or flat `app1_prod_v2` which affords developers a great deal of
+             flexibility in mapping the name to the style that best fits their existing development practices. For example, a
+             name could refer to an environment, an app, a version, or some combination of three.
+            
+             In the table below, for the project name `projects/foo`, the following relative release paths show how flat and
+             structured names might be chosen to match a desired development / deployment strategy.
+            
+             Use Case     | Flat Name           | Structured Name -------------|---------------------|----------------
+             Environments | releases/qa         | releases/qa Apps         | releases/app1_qa    | releases/app1/qa Versions
+             | releases/app1_v2_qa | releases/app1/v2/qa
+            
+             The delimiter between the release name path elements can be almost anything and it should work equally well with the
+             release name list filter, but in many ways the structured paths provide a clearer picture of the relationship
+             between `Release` instances.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest">
+             <summary>Update a `Release`.
+            
+             Only updates to the `ruleset_name` field will be honored. `Release` rename is not supported. To create a
+             `Release` use the CreateRelease method instead.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.FirebaseRulesAPI.v1.Data.Release,System.String)">
+            <summary>Constructs a new Update request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.Name">
+             <summary>Resource name for the `Release`.
+            
+             `Release` names may be structured `app1/prod/v2` or flat `app1_prod_v2` which affords developers a
+             great deal of flexibility in mapping the name to the style that best fits their existing development
+             practices. For example, a name could refer to an environment, an app, a version, or some combination
+             of three.
+            
+             In the table below, for the project name `projects/foo`, the following relative release paths show
+             how flat and structured names might be chosen to match a desired development / deployment strategy.
+            
+             Use Case     | Flat Name           | Structured Name
+             -------------|---------------------|---------------- Environments | releases/qa         |
+             releases/qa Apps         | releases/app1_qa    | releases/app1/qa Versions     | releases/app1_v2_qa
+             | releases/app1/v2/qa
+            
+             The delimiter between the release name path elements can be almost anything and it should work
+             equally well with the release name list filter, but in many ways the structured paths provide a
+             clearer picture of the relationship between `Release` instances.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.ReleasesResource.UpdateRequest.InitParameters">
+            <summary>Initializes Update parameter list.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.Rulesets">
+            <summary>Gets the Rulesets resource.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource">
+            <summary>The "rulesets" collection of methods.</summary>
+        </member>
+        <member name="F:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.service">
+            <summary>The service which this resource belongs to.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.#ctor(Google.Apis.Services.IClientService)">
+            <summary>Constructs a new resource.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.Create(Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset,System.String)">
+             <summary>Create a `Ruleset` from `Source`.
+            
+             The `Ruleset` is given a unique generated name which is returned to the caller. `Source` containing
+             syntactic or semantics errors will result in an error response indicating the first error encountered.
+             For a detailed view of `Source` issues, use TestRuleset.</summary>
+             <param name="body">The body of the request.</param>
+             <param name="name">Resource name for Project which owns this `Ruleset`.
+            
+             Format: `projects/{project_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest">
+             <summary>Create a `Ruleset` from `Source`.
+            
+             The `Ruleset` is given a unique generated name which is returned to the caller. `Source` containing
+             syntactic or semantics errors will result in an error response indicating the first error encountered.
+             For a detailed view of `Source` issues, use TestRuleset.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset,System.String)">
+            <summary>Constructs a new Create request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.Name">
+             <summary>Resource name for Project which owns this `Ruleset`.
+            
+             Format: `projects/{project_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.CreateRequest.InitParameters">
+            <summary>Initializes Create parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.Delete(System.String)">
+             <summary>Delete a `Ruleset` by resource name.
+            
+             If the `Ruleset` is referenced by a `Release` the operation will fail.</summary>
+             <param name="name">Resource name for the ruleset to delete.
+            
+             Format: `projects/{project_id}/rulesets/{ruleset_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest">
+             <summary>Delete a `Ruleset` by resource name.
+            
+             If the `Ruleset` is referenced by a `Release` the operation will fail.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Delete request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.Name">
+             <summary>Resource name for the ruleset to delete.
+            
+             Format: `projects/{project_id}/rulesets/{ruleset_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.DeleteRequest.InitParameters">
+            <summary>Initializes Delete parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.Get(System.String)">
+             <summary>Get a `Ruleset` by name including the full `Source` contents.</summary>
+             <param name="name">Resource name for the ruleset to get.
+            
+             Format: `projects/{project_id}/rulesets/{ruleset_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest">
+            <summary>Get a `Ruleset` by name including the full `Source` contents.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new Get request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.Name">
+             <summary>Resource name for the ruleset to get.
+            
+             Format: `projects/{project_id}/rulesets/{ruleset_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.GetRequest.InitParameters">
+            <summary>Initializes Get parameter list.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.List(System.String)">
+             <summary>List `Ruleset` metadata only and optionally filter the results by Ruleset name.
+            
+             The full `Source` contents of a `Ruleset` may be retrieved with GetRuleset.</summary>
+             <param name="name">Resource name for the project.
+            
+             Format: `projects/{project_id}`</param>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest">
+             <summary>List `Ruleset` metadata only and optionally filter the results by Ruleset name.
+            
+             The full `Source` contents of a `Ruleset` may be retrieved with GetRuleset.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.#ctor(Google.Apis.Services.IClientService,System.String)">
+            <summary>Constructs a new List request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.Name">
+             <summary>Resource name for the project.
+            
+             Format: `projects/{project_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.PageToken">
+            <summary>Next page token for loading the next batch of `Ruleset` instances.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.PageSize">
+            <summary>Page size to load. Maximum of 100. Defaults to 10. Note: `page_size` is just a hint and the
+            service may choose to load less than `page_size` due to the size of the output. To traverse all of
+            the releases, caller should iterate until the `page_token` is empty.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.RulesetsResource.ListRequest.InitParameters">
+            <summary>Initializes List parameter list.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.Test(Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetRequest,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "T:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest" -->
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetRequest,System.String)">
+            <summary>Constructs a new Test request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.Name">
+             <summary>Name of the project.
+            
+             Format: `projects/{project_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.Body">
+            <summary>Gets or sets the body of this request.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.GetBody">
+            <summary>Returns the body of the request.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.MethodName">
+            <summary>Gets the method name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.HttpMethod">
+            <summary>Gets the HTTP method.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.RestPath">
+            <summary>Gets the REST path.</summary>
+        </member>
+        <member name="M:Google.Apis.FirebaseRulesAPI.v1.ProjectsResource.TestRequest.InitParameters">
+            <summary>Initializes Test parameter list.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.Empty">
+             <summary>A generic empty message that you can re-use to avoid defining duplicated empty messages in your APIs. A
+             typical example is to use it as the request or the response type of an API method. For instance:
+            
+             service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); }
+            
+             The JSON representation for `Empty` is empty JSON object `{}`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Empty.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.File">
+            <summary>`File` containing source content.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.File.Content">
+            <summary>Textual Content.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.File.Fingerprint">
+            <summary>Fingerprint (e.g. github sha) associated with the `File`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.File.Name">
+            <summary>File name.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.File.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.Issue">
+            <summary>Issues include warnings, errors, and deprecation notices.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Issue.Description">
+            <summary>Short error description.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Issue.Severity">
+            <summary>The severity of the issue.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Issue.SourcePosition">
+            <summary>Position of the issue in the `Source`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Issue.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.ListReleasesResponse">
+            <summary>The response for FirebaseRulesService.ListReleases.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListReleasesResponse.NextPageToken">
+            <summary>The pagination token to retrieve the next page of results. If the value is empty, no further
+            results remain.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListReleasesResponse.Releases">
+            <summary>List of `Release` instances.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListReleasesResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.ListRulesetsResponse">
+            <summary>The response for FirebaseRulesService.ListRulesets</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListRulesetsResponse.NextPageToken">
+            <summary>The pagination token to retrieve the next page of results. If the value is empty, no further
+            results remain.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListRulesetsResponse.Rulesets">
+            <summary>List of `Ruleset` instances.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.ListRulesetsResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.Release">
+            <summary>`Release` is a named reference to a `Ruleset`. Once a `Release` refers to a `Ruleset`, rules-enabled
+            services will be able to enforce the `Ruleset`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Release.CreateTime">
+            <summary>Time the release was created. @OutputOnly</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Release.Name">
+             <summary>Resource name for the `Release`.
+            
+             `Release` names may be structured `app1/prod/v2` or flat `app1_prod_v2` which affords developers a great
+             deal of flexibility in mapping the name to the style that best fits their existing development practices.
+             For example, a name could refer to an environment, an app, a version, or some combination of three.
+            
+             In the table below, for the project name `projects/foo`, the following relative release paths show how flat
+             and structured names might be chosen to match a desired development / deployment strategy.
+            
+             Use Case     | Flat Name           | Structured Name -------------|---------------------|----------------
+             Environments | releases/qa         | releases/qa Apps         | releases/app1_qa    | releases/app1/qa
+             Versions     | releases/app1_v2_qa | releases/app1/v2/qa
+            
+             The delimiter between the release name path elements can be almost anything and it should work equally well
+             with the release name list filter, but in many ways the structured paths provide a clearer picture of the
+             relationship between `Release` instances.
+            
+             Format: `projects/{project_id}/releases/{release_id}`</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Release.RulesetName">
+            <summary>Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist the `Release` to be
+            created.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Release.UpdateTime">
+            <summary>Time the release was updated. @OutputOnly</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Release.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset">
+            <summary>`Ruleset` is an immutable copy of `Source` with a globally unique identifier and a creation
+            time.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset.CreateTime">
+            <summary>Time the `Ruleset` was created. @OutputOnly</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset.Name">
+            <summary>Name of the `Ruleset`. The ruleset_id is auto generated by the service. Format:
+            `projects/{project_id}/rulesets/{ruleset_id}` @OutputOnly</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset.Source">
+            <summary>`Source` for the `Ruleset`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Ruleset.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.Source">
+            <summary>`Source` is one or more `File` messages comprising a logical set of rules.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Source.Files">
+            <summary>`File` set constituting the `Source` bundle.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.Source.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.SourcePosition">
+            <summary>Position in the `Source` content including its line, column number, and an index of the `File` in the
+            `Source` message. Used for debug purposes.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.SourcePosition.Column">
+            <summary>First column on the source line associated with the source fragment.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.SourcePosition.FileName">
+            <summary>Name of the `File`.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.SourcePosition.Line">
+            <summary>Line number of the source fragment. 1-based.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.SourcePosition.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetRequest">
+            <summary>The request for FirebaseRulesService.TestRuleset.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetRequest.Source">
+            <summary>`Source` to be checked for correctness.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetRequest.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+        <member name="T:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetResponse">
+            <summary>The response for FirebaseRulesService.TestRuleset.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetResponse.Issues">
+            <summary>Syntactic and semantic `Source` issues of varying severity. Issues of `ERROR` severity will prevent
+            tests from executing.</summary>
+        </member>
+        <member name="P:Google.Apis.FirebaseRulesAPI.v1.Data.TestRulesetResponse.ETag">
+            <summary>The ETag of the item.</summary>
+        </member>
+    </members>
+</doc>

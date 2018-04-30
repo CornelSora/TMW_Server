@@ -18,6 +18,35 @@ namespace TAW_Server.Controllers
             public string password { get; set; }
         }
      
+
+        public bool RegisterInDB(UserModel regModel)
+        {
+            bool exists = DbContext.Users.Where(x => x.Username == regModel.username).FirstOrDefault() != null;
+            if (exists)
+            {
+                return false;
+            }
+
+            try
+            {
+                var user = new Models.User()
+                {
+                    Username = regModel.username,
+                    Password = SecurePasswordHasher.Hash(regModel.password),
+                    Jokes = new List<Joke>()
+                };
+
+
+                DbContext.Users.Add(user);
+                DbContext.SaveChanges();
+                return true;
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Register user
         /// </summary>
@@ -46,14 +75,13 @@ namespace TAW_Server.Controllers
 
                 DbContext.Users.Add(user);
                 DbContext.SaveChanges();
+                return Content<int>(System.Net.HttpStatusCode.Created, user.Id);
             }
-
             catch (Exception ex)
             {
                 return Content<string>(System.Net.HttpStatusCode.ServiceUnavailable, "An error has ocurred\n" + ex.ToString()); ;
             }
 
-            return Content<string>(System.Net.HttpStatusCode.Created, "User has been created"); ;
         }
         #endregion
 
@@ -89,9 +117,17 @@ namespace TAW_Server.Controllers
             User user = DbContext.Users.Where(x => x.Username == loginModel.username).FirstOrDefault();
             if (user == null)
             {
-                return Content<string>(System.Net.HttpStatusCode.NotAcceptable, "Username doesn't exist");
+                var result = RegisterInDB(loginModel);
+                if (result)
+                {
+                    return Content<string>(System.Net.HttpStatusCode.Accepted, "User added in database");
+                } else
+                {
+                    return Content<string>(System.Net.HttpStatusCode.Conflict, "Username already taken");
+                }
+                //return Content<string>(System.Net.HttpStatusCode.NotAcceptable, "Username doesn't exist");
             }
-            else if (SecurePasswordHasher.Hash(loginModel.password).Equals(user.Username))
+            else if (!SecurePasswordHasher.Verify(loginModel.password, user.Password))
             {
                 return Content<string>(System.Net.HttpStatusCode.NotAcceptable, "Password isn't correct");
             }

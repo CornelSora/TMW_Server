@@ -30,7 +30,7 @@ namespace TAW_Server.Controllers
         [Route("api/jokes")]
         public IEnumerable<JokeModel> Get()
         {
-            var jokesBD = DbContext.Jokes.ToList();
+            var jokesBD = DbContext.Jokes.OrderBy(x => x.JokeID).ToList();
             var jokes = new List<JokeModel>();
             foreach (var jokeBD in jokesBD)
             {
@@ -46,6 +46,47 @@ namespace TAW_Server.Controllers
                 jokes.Add(j);
             }
             return jokes;
+        }
+
+        [Route("api/jokes/{userid}")]
+        public IEnumerable<JokeModel> Get([FromUri] int userid)
+        {
+            var jokesBD = DbContext.Jokes.Where(x => x.UserID == userid).OrderBy(x => x.JokeID).ToList();
+            var jokes = new List<JokeModel>();
+            foreach (var jokeBD in jokesBD)
+            {
+                var j = new JokeModel()
+                {
+                    Text = jokeBD.Description,
+                    Title = jokeBD.Name,
+                    UserID = (int)jokeBD.UserID,
+                    NoLikes = jokeBD.NoLikes ?? 0,
+                    NoUnlikes = jokeBD.NoUnlikes ?? 0,
+                    JokeID = jokeBD.JokeID
+                };
+                jokes.Add(j);
+            }
+            return jokes;
+        }
+
+        [Route("api/joke")]
+        public JokeModel GetJoke(int jokeid)
+        {
+            var jokeBD = DbContext.Jokes.Where(x => x.JokeID == jokeid).FirstOrDefault();
+            if (jokeBD != null)
+            {
+                var j = new JokeModel()
+                {
+                    Text = jokeBD.Description,
+                    Title = jokeBD.Name,
+                    UserID = (int)jokeBD.UserID,
+                    NoLikes = jokeBD.NoLikes ?? 0,
+                    NoUnlikes = jokeBD.NoUnlikes ?? 0,
+                    JokeID = jokeBD.JokeID
+                };
+                return j;
+            }
+            return new JokeModel();
         }
 
         #region Inregistrare Gluma
@@ -92,7 +133,7 @@ namespace TAW_Server.Controllers
                     UserID = user.Id
                 };
 
-                user.Jokes.Add(joke);
+                //user.Jokes.Add(joke);
                 //Statics.GetAllJokes().Add(joke);
                 DbContext.Jokes.Add(joke);
                 DbContext.SaveChanges();
@@ -106,9 +147,73 @@ namespace TAW_Server.Controllers
         }
         #endregion
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        [Route("api/jokes/like")]
+        [HttpPut]
+        public IHttpActionResult Put(int UserID, int JokeID, bool isLike)
         {
+            try
+            {
+                var user = DbContext.Users
+                        .Where(x => x.Id == UserID).FirstOrDefault();
+
+                if (user == null)
+                {
+                    return Content<string>(System.Net.HttpStatusCode.Unauthorized, "You don't have access here!");
+                }
+
+                var joke = DbContext.Jokes.Where(x => x.JokeID == JokeID).FirstOrDefault();
+
+                if (joke == null)
+                {
+                    return Content<string>(System.Net.HttpStatusCode.Unauthorized, "The joke doesn't exist!");
+                }
+
+                var rating = new Rating()
+                {
+                    JokeID = joke.JokeID,
+                    UserID = user.Id,
+                };
+
+                var ratingDB = joke.Ratings.Where(x => x.JokeID == rating.JokeID && x.UserID == rating.UserID).FirstOrDefault();
+                if (ratingDB != null && ((ratingDB.Rating1 == 0 && !isLike) || (ratingDB.Rating1 == 1 && isLike)))
+                {
+                    return Content<string>(System.Net.HttpStatusCode.Unauthorized, "You already voted!");
+                }
+
+                if (isLike)
+                {
+                    rating.Rating1 = 1;
+                    joke.NoLikes++;
+                    if (ratingDB != null)
+                    {
+                        joke.NoUnlikes--;
+                    }
+                }
+                else
+                {
+                    rating.Rating1 = 0;
+                    joke.NoUnlikes++;
+                    if (ratingDB != null)
+                    {
+                        joke.NoLikes--;
+                    }
+                }
+
+                if (ratingDB == null)
+                {
+                    DbContext.Ratings.Add(rating);
+                }
+                else
+                {
+                    ratingDB.Rating1 = rating.Rating1;
+                }
+                DbContext.SaveChanges();
+                return Content(System.Net.HttpStatusCode.OK, "");
+            } catch (Exception ex)
+            {
+                return Content(System.Net.HttpStatusCode.BadGateway, ex.InnerException.ToString());
+
+            }
         }
 
         // DELETE api/values/5

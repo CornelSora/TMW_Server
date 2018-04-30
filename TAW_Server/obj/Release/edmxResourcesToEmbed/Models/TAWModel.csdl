@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TMW_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Jokes" EntityType="DBContext.Joke" />
+    <EntitySet Name="Ratings" EntityType="DBContext.Rating" />
+    <EntitySet Name="Users" EntityType="DBContext.User" />
+    <AssociationSet Name="FK__Joke__UserID__25869641" Association="DBContext.FK__Joke__UserID__25869641">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Joke" EntitySet="Jokes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rating__JokeID__36B12243" Association="DBContext.FK__Rating__JokeID__36B12243">
+      <End Role="Joke" EntitySet="Jokes" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Rating__UserID__37A5467C" Association="DBContext.FK__Rating__UserID__37A5467C">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Joke">
+    <Key>
+      <PropertyRef Name="JokeID" />
+    </Key>
+    <Property Name="JokeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NoLikes" Type="Int32" />
+    <Property Name="NoUnlikes" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="DBContext.FK__Joke__UserID__25869641" FromRole="Joke" ToRole="User" />
+    <NavigationProperty Name="Ratings" Relationship="DBContext.FK__Rating__JokeID__36B12243" FromRole="Joke" ToRole="Rating" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="RatingID" />
+    </Key>
+    <Property Name="RatingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JokeID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Rating1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Joke" Relationship="DBContext.FK__Rating__JokeID__36B12243" FromRole="Rating" ToRole="Joke" />
+    <NavigationProperty Name="User" Relationship="DBContext.FK__Rating__UserID__37A5467C" FromRole="Rating" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Jokes" Relationship="DBContext.FK__Joke__UserID__25869641" FromRole="User" ToRole="Joke" />
+    <NavigationProperty Name="Ratings" Relationship="DBContext.FK__Rating__UserID__37A5467C" FromRole="User" ToRole="Rating" />
+  </EntityType>
+  <Association Name="FK__Joke__UserID__25869641">
+    <End Type="DBContext.User" Role="User" Multiplicity="0..1" />
+    <End Type="DBContext.Joke" Role="Joke" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Joke">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rating__JokeID__36B12243">
+    <End Type="DBContext.Joke" Role="Joke" Multiplicity="1" />
+    <End Type="DBContext.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joke">
+        <PropertyRef Name="JokeID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="JokeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Rating__UserID__37A5467C">
+    <End Type="DBContext.User" Role="User" Multiplicity="1" />
+    <End Type="DBContext.Rating" Role="Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
